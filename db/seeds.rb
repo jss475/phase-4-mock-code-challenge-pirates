@@ -32,7 +32,7 @@ end
 puts "Seeding buried treasures..."
 treasures.each do |t|
   puts "#{t}..."
-  Treasure.create(contents: t, pirate: Pirate.order('RANDOM()').first, island: Island.order('RANDOM()').first)
+  Treasure.create(contents: t, pirate_id: Pirate.ids.sample, island_id: Island.ids.sample)
 end
 
 puts '☠️ Done seeding! ☠️'
